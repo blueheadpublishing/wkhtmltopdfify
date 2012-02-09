@@ -1,4 +1,4 @@
-= WKHTMLTOPDF-BINARY
+= wkhtmltopdfify
 	
 wkhtmltopdfify is a gem for installing the wkhtmltopdf command line tool for converting html documents to pdf. This is essentially a collection of static builds from the wkhtmltopdf site: http://code.google.com/p/wkhtmltopdf. This gem looks to see which operating system you are using and then uses the static binary file for that OS.
 
@@ -11,11 +11,11 @@ wkhtmltopdfify is a gem for installing the wkhtmltopdf command line tool for con
 
 == Installation
 
-=== Install Using the Gem
+=== Option One: Install Using This Gem
 
     $ gem install wkhtmltopdfify
 
-=== Install Static Builds On Your Own (downloaded from the wkhtmltopdf website)
+=== Option Two: Install Static Builds On Your Own (downloaded from the wkhtmltopdf website)
 
 Generally speaking, the wkhtmltopdfify gem should work for most people. However, if it doesn't, we would recommend installing the static builds on your own. You can download whichever version you like from the downloads section of the wkhtmltopdf site: http://code.google.com/p/wkhtmltopdf/downloads/list Make sure to select "All" from the dropdown if you are looking for older versions. The Windows and Mac OS's have install scripts. For *nix versions, or to install win/mac manually, just download a "static" version and unzip it into a location that can be called in your system PATH.
 
@@ -25,7 +25,7 @@ To UNINSTALL:
 
     $ gem uninstall wkhtmltopdfify
 
-=== Compile From Source and Install
+=== Option Three: Compile From Source and Install
 
 We would not really recommended this. It's not for the faint at heart. You will need to install QT and hack the heck out of ./configure. That said, here's a link for some help.
 
