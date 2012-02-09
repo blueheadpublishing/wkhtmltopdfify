@@ -7,6 +7,7 @@ wkhtmltopdfify is a gem for installing the wkhtmltopdf command line tool for con
 === System Requirements
 
 * Ruby v1.8.7 or higher http://www.ruby-lang.org/en/downloads/
+* Java 1.5 or higher http://www.java.com/en/download/index.jsp
 
 
 == Installation
