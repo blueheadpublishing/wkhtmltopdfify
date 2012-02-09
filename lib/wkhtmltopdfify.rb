@@ -1,16 +1,24 @@
-require "wkhtmltopdfify/version"
+require 'wkhtmltopdfify/version'
+require 'rbconfig'
 
 module Wkhtmltopdfify
-  if RUBY_PLATFORM =~ /linux/
-    executable = 'bin/linux/wkhtmltopdf_linux_386'
-  elsif RUBY_PLATFORM =~ /darwin/
-    executable = 'bin/wkhtmltopdf.app/Contents/MacOS/wkhtmltopdf'
-  elsif RUBY_PLATFORM =~ /mswin32/ or  /minigw32/
-    executable = 'bin/windows/wkhtmltopdf.exe'
-  else
-    raise "Something doesn't seem to be working. If you are running on Windows, you may need to install wkhtmltopdf manually. exe's available here: http://code.google.com/p/wkhtmltopdf/downloads/list Otherwise, you may need to install wkhtmltopdf manually. Try https://github.com/blueheadpublishing/bookshop/wiki/Installing-wkhtmltopdf"
+  
+  def assign_os_string
+    host_os = RbConfig::CONFIG['host_os']
+    determine_os(host_os)
   end
-
-  executable = File.join(File.dirname(__FILE__), executable)
-  system(executable + " " + $*.join(" "))
+  
+  def determine_os(os_string)
+    case os_string
+      when /darwin/ then @executable = 'bin/wkhtmltopdf.app/Contents/MacOS/wkhtmltopdf'
+      when /linux/ then @executable = 'bin/linux/wkhtmltopdf_linux_386'
+      when /mswin|mingw/ then @executable = 'bin/windows/wkhtmltopdf.exe'
+      else raise InvalidOSError
+    end
+  end
+  
+  def execute_platform_executable
+    @executable = File.join(File.dirname(__FILE__), @executable)
+    system(@executable + " " + $*.join(" "))
+  end
 end
