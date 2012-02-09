@@ -1,0 +1,9 @@
+#!/usr/bin/env ruby
+
+begin
+  require "wkhtmltopdfify/wkhtmltopdf"
+rescue LoadError
+  wkhtmltopdf_path = File.expand_path('../../lib', __FILE__)
+  $:.unshift(wkhtmltopdf_path)
+  require "wkhtmltopdf"
+end

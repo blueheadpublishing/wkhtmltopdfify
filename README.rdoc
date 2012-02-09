@@ -1,0 +1,64 @@
+= WKHTMLTOPDF-BINARY
+	
+wkhtmltopdfify is a gem for installing the wkhtmltopdf command line tool for converting html documents to pdf. This is essentially a collection of static builds from the wkhtmltopdf site: http://code.google.com/p/wkhtmltopdf. This gem looks to see which operating system you are using and then uses the static binary file for that OS.
+
+== Getting Started
+
+=== System Requirements
+
+* Ruby v1.8.7 or higher http://www.ruby-lang.org/en/downloads/
+
+
+== Installation
+
+=== Install Using the Gem
+
+    $ gem install wkhtmltopdfify
+
+=== Install Static Builds On Your Own (downloaded from the wkhtmltopdf website)
+
+Generally speaking, the wkhtmltopdfify gem should work for most people. However, if it doesn't, we would recommend installing the static builds on your own. You can download whichever version you like from the downloads section of the wkhtmltopdf site: http://code.google.com/p/wkhtmltopdf/downloads/list Make sure to select "All" from the dropdown if you are looking for older versions. The Windows and Mac OS's have install scripts. For *nix versions, or to install win/mac manually, just download a "static" version and unzip it into a location that can be called in your system PATH.
+
+*Note*: If you choose to install the static builds, make sure to *UNINSTALL* the wkhtmltopdfify gem. Otherwise you will probably have conflicts in your PATH.
+
+To UNINSTALL:
+
+    $ gem uninstall wkhtmltopdfify
+
+=== Compile From Source and Install
+
+We would not really recommended this. It's not for the faint at heart. You will need to install QT and hack the heck out of ./configure. That said, here's a link for some help.
+
+http://code.google.com/p/wkhtmltopdf/wiki/compilation
+
+== Get Involved
+
+1. Fork the repository.
+2. Pick an issue (or feature you want to add).
+3. Make changes to your forked code.
+4. Add tests so that we don't accidentally break your addition with our future commits.
+5. Commit to your git (forked) repository.
+6. Let us know about your code and we'll review/merge it into the master.
+7. And pat yourself on the back for contributing to an open source project!!
+	
+== Copyright (MIT-LICENSE)
+
+Copyright (C) 2010, 2011 by BlueHead Publishing, Inc (http://blueheadpublishing.com)
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+THE SOFTWARE.
