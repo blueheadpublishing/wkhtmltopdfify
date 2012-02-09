@@ -1,8 +1,12 @@
 = wkhtmltopdfify
-	
+
 wkhtmltopdfify is a gem for installing the wkhtmltopdf command line tool for converting html documents to pdf. This is essentially a collection of static builds from the wkhtmltopdf site: http://code.google.com/p/wkhtmltopdf. This gem looks to see which operating system you are using and then uses the static binary file for that OS.
 
 == Getting Started
+
+=== Current wkhtmltopdf Version
+
+wkhtmlotpdf 0.11.0 rc2
 
 === System Requirements
 
@@ -63,3 +67,11 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
+
+== Thanks
+
+We would like to thank:
+
+* The Ruby/Rubygems Team www.ruby-lang.org/
+* Zakir Durumeric for his gem (from which this was born) wkhtmltopdf-binary
+  https://github.com/zakird/wkhtmltopdf_binary_gem
