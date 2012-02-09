@@ -3,22 +3,25 @@ require 'rbconfig'
 
 module Wkhtmltopdfify
   
-  def assign_os_string
-    host_os = RbConfig::CONFIG['host_os']
-    determine_os(host_os)
-  end
+  class Execute
   
-  def determine_os(os_string)
-    case os_string
-      when /darwin/ then @executable = 'bin/wkhtmltopdf.app/Contents/MacOS/wkhtmltopdf'
-      when /linux/ then @executable = 'bin/linux/wkhtmltopdf_linux_386'
-      when /mswin|mingw/ then @executable = 'bin/windows/wkhtmltopdf.exe'
-      else raise InvalidOSError
+    HOST_OS = RbConfig::CONFIG['host_os']
+  
+    def self.determine_os_executable(os_string)
+      case os_string
+        when /darwin/ then @executable = 'bin/wkhtmltopdf.app/Contents/MacOS/wkhtmltopdf'
+        when /linux/ then @executable = 'bin/linux/wkhtmltopdf_linux_386'
+        when /mswin|mingw/ then @executable = 'bin/windows/wkhtmltopdf.exe'
+        else raise InvalidOSError
+      end
     end
-  end
   
-  def execute_platform_executable
-    @executable = File.join(File.dirname(__FILE__), @executable)
-    system(@executable + " " + $*.join(" "))
+    def self.execute_os_executable
+      @executable = File.join(File.dirname(__FILE__), @executable)
+      system(@executable + " " + $*.join(" "))
+    end
+    
+    determine_os_executable(HOST_OS)
+    
   end
 end
