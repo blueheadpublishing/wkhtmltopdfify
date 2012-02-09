@@ -1,4 +1,4 @@
-= wkhtmltopdf_ify_
+= wkhtmltopdf(ify)
 
 wkhtmltopdfify is a gem for installing the wkhtmltopdf command line tool for converting html documents to pdf. This is essentially a collection of static builds from the wkhtmltopdf site: http://code.google.com/p/wkhtmltopdf. This gem looks to see which operating system you are using and then uses the static binary file for that OS.
 
@@ -6,7 +6,7 @@ wkhtmltopdfify is a gem for installing the wkhtmltopdf command line tool for con
 
 === Current wkhtmltopdf Version
 
-wkhtmlotpdf 0.11.0 rc2
+  wkhtmlotpdf 0.11.0 rc2 (0.10.0)
 
 === System Requirements
 
